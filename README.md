@@ -1,7 +1,7 @@
-```markdown
-# Algerian Forest Fires Prediction App
+# **Algerian Forest Fires Prediction App**
 
-This is a Flask web application for predicting the Fire Weather Index (FWI) using a trained Ridge Regression model. The model is based on Algerian forest fire data and utilizes standard machine learning tools for preprocessing and prediction.
+This is a Flask web application for predicting the Fire Weather Index (FWI) using a trained Ridge Regression model. 
+The model is based on Algerian forest fire data and utilizes standard machine learning tools for preprocessing and prediction.
 
 ---
 
@@ -106,4 +106,5 @@ __pycache__/
 *.pyc
 *.pkl
 .env
+
 ```

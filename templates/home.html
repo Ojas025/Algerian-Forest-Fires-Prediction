@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home Page</title>
+</head>
+
+<body class="w-full min-h-screen bg-gray-400 flex items-center justify-center px-4">
+    <div class="w-full max-w-3xl bg-gray-200 rounded-sm shadow-sm shadow-black p-6 flex flex-col items-center gap-4">
+        <form action="{{ url_for('predict_data') }}" method="post" class="w-full">
+            <h1 class="text-2xl font-bold mb-4 text-center">Form</h1>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <label for="temp" class="block font-medium text-gray-700">Temperature</label>
+                    <input id="temp" name="Temperature" type="text" placeholder="Temperature"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="rh" class="block font-medium text-gray-700">Relative Humidity (RH)</label>
+                    <input id="rh" name="RH" type="text" placeholder="RH"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="ws" class="block font-medium text-gray-700">Wind Speed (Ws)</label>
+                    <input id="ws" name="Ws" type="text" placeholder="Ws"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="rain" class="block font-medium text-gray-700">Rain</label>
+                    <input id="rain" name="Rain" type="text" placeholder="Rain"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="ffmc" class="block font-medium text-gray-700">FFMC</label>
+                    <input id="ffmc" name="FFMC" type="text" placeholder="FFMC"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="dmc" class="block font-medium text-gray-700">DMC</label>
+                    <input id="dmc" name="DMC" type="text" placeholder="DMC"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="isi" class="block font-medium text-gray-700">ISI</label>
+                    <input id="isi" name="ISI" type="text" placeholder="ISI"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div>
+                    <label for="classes" class="block font-medium text-gray-700">Classes</label>
+                    <input id="classes" name="Classes" type="text" placeholder="Classes"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+
+                <div class="md:col-span-2">
+                    <label for="region" class="block font-medium text-gray-700">Region</label>
+                    <input id="region" name="Region" type="text" placeholder="Region"
+                        class="w-full bg-white rounded-sm px-3 py-2 border border-gray-300 focus:outline-none focus:ring-1 focus:ring-black"
+                        required>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <button type="submit"
+                    class="w-full text-white py-2 px-4 rounded bg-black text-white hover:bg-black/90 transition">
+                    Predict
+                </button>
+            </div>
+        </form>
+
+        <h2 class="text-xl mt-4 font-semibold">
+            The FWI Prediction is: <span class="font-semibold">{{result}}</span>
+        </h2>
+    </div>
+</body>
+
+</html>

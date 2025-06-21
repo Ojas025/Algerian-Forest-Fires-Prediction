@@ -14,11 +14,11 @@ with open('models/ridge_cv.pkl','rb') as file:
 with open('models/scaler.pkl','rb') as file:
     scaler = pickle.load(file)    
 
-@app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
-@app.route('/prediction', methods=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def predict_data():
     if request.method == 'GET':
         return render_template('home.html')
